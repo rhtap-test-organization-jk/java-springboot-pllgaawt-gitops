@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: java-springboot-pllgaawt
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: java-springboot-pllgaawt 
+  name: java-springboot-pllgaawt
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: java-springboot-pllgaawt
+    weight: 100 
